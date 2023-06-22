@@ -1,0 +1,7 @@
+TobiiStream v2.0.3
+
+SUCCESS: The connection to the GazeTrack Processing library has been correctly set up!
+
+TobiiState Unknown
+Make sure the Tobii eye-tracker is connected to the computer, and that the Tobii software is running!
+

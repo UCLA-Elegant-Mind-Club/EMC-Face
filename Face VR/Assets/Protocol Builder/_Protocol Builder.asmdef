@@ -1,0 +1,20 @@
+{
+    "name": "ProtocolBuilder",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:6546d7765b4165b40850b3667f981c26",
+        "GUID:c4bc6ee480683d344ab65cdeb7831928",
+        "GUID:b1dac0f09d3825743b4d62de1d8ced8d",
+        "GUID:a399f10cb0c018d4ba5a5992aafc77a0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

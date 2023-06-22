@@ -1,0 +1,28 @@
+splitColumn = 2;
+newVarNames = ["Size (deg)", "Eccentricity (deg)"];
+
+myDir = uigetdir; %gets directory
+listing = dir(myDir);
+mkdir(myDir + " separated");
+for folder = 1:length(listing)
+    mkdir(fullfile(myDir + " separated", listing(folder).name));
+    sublisting = dir(fullfile(myDir, listing(folder).name, '*.csv'));
+    for file = 1:length(sublisting)
+        table = readtable(fullfile(myDir, listing(folder).name, sublisting(file).name));
+        varNames = table.Properties.VariableNames;
+        matrix = table2cell(table); 
+        matrix(:,1) = cellfun(@(str) lettertonum(str), matrix(:,1), 'UniformOutput', false);
+        matrix(:,3)=num2cell([matrix{:,3}].'.*(1-[matrix{:,2}].'));
+        matrix(:,4)=num2cell([matrix{:,4}].'.*1000-109);
+        matrix = [num2cell([matrix{:,4}].'~=-109), matrix(:,5), matrix(:,3), matrix(:,4), matrix(:,1)];
+        table = cell2table(matrix, "VariableNames", ["Correct Response", "Size (deg)", "Eccentricity (deg)", "Reaction Time (ms)", "Target"]);
+        writetable(table, fullfile(myDir + " separated", listing(folder).name, sublisting(file).name));
+    end
+end
+
+function res = lettertonum(str)
+    if str=="E"; res=1;
+    elseif str=="P"; res=2;
+    else; res=3; 
+    end 
+end

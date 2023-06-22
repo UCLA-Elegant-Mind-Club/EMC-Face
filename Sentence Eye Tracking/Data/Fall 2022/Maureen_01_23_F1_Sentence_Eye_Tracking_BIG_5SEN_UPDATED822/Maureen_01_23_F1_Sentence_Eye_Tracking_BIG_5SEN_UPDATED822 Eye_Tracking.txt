@@ -1,0 +1,7 @@
+TobiiStream v2.0.3
+
+ERROR: The connection to the GazeTrack Processing library could not be set up!
+The socket port used by TobiiStream.exe to communicate with Processing is already in use by another application.
+
+Type in a new port (e.g., 5656) and press 'Enter': 
+C:\Users\elega\OneDrive\Documents\GitHub\Face\Sentence Eye Tracking>
